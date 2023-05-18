@@ -4,13 +4,12 @@ const Navbar = () => {
   const navItems = <>
         <li><Link to="/">Home</Link> </li>
         <li><Link >Blogs</Link></li>
-        <li><Link >About</Link></li>
         <li><Link >All Toys</Link></li>
         <li><Link >My Toys</Link></li>
         <li><Link >Add A Toy</Link></li>
     </>
   return (
-    <div className="navbar">
+    <div className="navbar bg-sky-50">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
