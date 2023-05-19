@@ -15,7 +15,7 @@ const MarqueSlider = () => {
             </div>
             <div className='flex items-center gap-3 mx-5'>
                 <div className='bg-red-500 p-5 border-l-4 border-b-4 border-red-800 rounded-lg'>
-                    <p className='text-6xl text-center text-white'><i class="fa-solid fa-headset"></i></p>
+                    <p className='text-6xl text-center text-white'><i className="fa-solid fa-headset"></i></p>
                 </div>
                 <div>
                     <h1 className='font-bold text-xl'>SUPPORT</h1>
@@ -24,7 +24,7 @@ const MarqueSlider = () => {
             </div>
             <div className='flex items-center gap-3 ms-5'>
                 <div className='bg-sky-500 p-5 border-l-4 border-b-4 border-sky-800 rounded-lg'>
-                    <p className='text-6xl text-center text-white'><i class="fa-solid fa-right-left"></i></p>
+                    <p className='text-6xl text-center text-white'><i className="fa-solid fa-right-left"></i></p>
                 </div>
                 <div>
                     <h1 className='font-bold text-xl'>RETURN</h1>
@@ -33,7 +33,7 @@ const MarqueSlider = () => {
             </div>
             <div className='flex items-center gap-3 ms-5'>
                 <div className='bg-green-500 p-5 border-l-4 border-b-4 border-green-800 rounded-lg'>
-                    <p className='text-6xl text-center text-white'><i class="fa-solid fa-money-bill-1-wave"></i></p>
+                    <p className='text-6xl text-center text-white'><i className="fa-solid fa-money-bill-1-wave"></i></p>
                 </div>
                 <div>
                     <h1 className='font-bold text-xl'>PAYMENT</h1>
@@ -42,7 +42,7 @@ const MarqueSlider = () => {
             </div>
             <div className='flex items-center gap-3 ms-5'>
                 <div className='bg-indigo-500 p-5 border-l-4 border-b-4 border-indigo-800 rounded-lg'>
-                    <p className='text-6xl text-center text-white'><i class="fa-solid fa-gift"></i></p>
+                    <p className='text-6xl text-center text-white'><i className="fa-solid fa-gift"></i></p>
                 </div>
                 <div>
                     <h1 className='font-bold text-xl'>GIFT SERVICE</h1>

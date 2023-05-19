@@ -67,9 +67,9 @@ const Footer = () => {
                     <span>© 2023 Appy. All rights reserved.</span>
                     <span>Terms · Privacy Policy</span>
                     <div className='text-indigo-200 text-xl'>
-                        <Link className='mx-5'><i class="fa-brands fa-facebook"></i></Link>
-                        <Link className='mx-5'><i class="fa-brands fa-twitter"></i></Link>
-                        <Link className='mx-5'><i class="fa-brands fa-instagram"></i></Link>
+                        <Link className='mx-5'><i className="fa-brands fa-facebook"></i></Link>
+                        <Link className='mx-5'><i className="fa-brands fa-twitter"></i></Link>
+                        <Link className='mx-5'><i className="fa-brands fa-instagram"></i></Link>
                     </div>
                 </div>
             </footer>
