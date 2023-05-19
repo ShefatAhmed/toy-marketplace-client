@@ -2,11 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SighUp = () => {
+    const handleRegister = event =>{
+        event.prventDefault();
+    }
     return (
         <div>
             <div className="flex flex-col items-center justify-center my-24">
                 <h1 className="text-4xl font-bold mb-8">Sign Up</h1>
-                <form className="w-full max-w-sm w-full max-w-md py-16 px-6 bg-gray-200">
+                <form onSubmit={handleRegister} className="w-full max-w-sm w-full max-w-md py-16 px-6 bg-gray-200">
                     <div className="mb-4">
                     <label className="block text-gray-700 font-bold mb-2">
                             Name:
