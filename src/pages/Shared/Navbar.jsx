@@ -1,13 +1,21 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const userLogout = () => {
+    logOut()
+      .then(result => { })
+      .catch(error => console.error(error));
+  }
   const navItems = <>
-        <li><Link to="/">Home</Link> </li>
-        <li><Link >Blogs</Link></li>
-        <li><Link >All Toys</Link></li>
-        <li><Link >My Toys</Link></li>
-        <li><Link >Add A Toy</Link></li>
-    </>
+    <li><Link to="/">Home</Link> </li>
+    <li><Link >Blogs</Link></li>
+    <li><Link >All Toys</Link></li>
+    <li><Link >My Toys</Link></li>
+    <li><Link >Add A Toy</Link></li>
+  </>
   return (
     <div className="navbar bg-sky-50">
       <div className="navbar-start">
@@ -19,19 +27,23 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal text-gray-400 font-bold px-1">
-          {navItems}
-        </ul>
-      </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal text-gray-400 font-bold px-1">
+            {navItems}
+          </ul>
+        </div>
       </div>
       <Link className="flex items-center me-20">
-          <img  src="https://i.ibb.co/Qcc9mJ4/attachment-62129397.png" className="w-20 md:ms-5" alt="" />
+        <img src="https://i.ibb.co/Qcc9mJ4/attachment-62129397.png" className="w-20 md:ms-5" alt="" />
         <h1 className="text-3xl font-bold"><span className="text-cyan-600">Toy</span><span className="text-yellow-500">Stars</span></h1>
-        </Link>
+      </Link>
       <div className="navbar-end">
-          <img className="w-10 rounded-full me-8 bg-lime-50" src="" />
-        <Link to="/login" className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Login</Link>
+        {
+          user && <img className="w-10 rounded-full me-8 bg-lime-50" src="https://avatars.githubusercontent.com/u/112659624?v=4" />
+        }
+        {
+          user ? ( <Link onClick={userLogout} className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Log Out</Link>) : (<Link to="/login" className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Login</Link>)
+        }
       </div>
     </div>
   );

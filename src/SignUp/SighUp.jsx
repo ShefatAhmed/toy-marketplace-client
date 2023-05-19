@@ -1,9 +1,44 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const SighUp = () => {
-    const handleRegister = event =>{
-        event.prventDefault();
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const {createUser} = useContext(AuthContext);
+    const handleRegister = event => {
+        setSuccess('')
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const Img = form.image.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        createUser(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset();
+                setError('')
+                setSuccess('User created successfully')
+                updateUserData(result.user, name , Img);
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+            })    
+    }
+    const updateUserData = (user, name , Img) => {
+        updateProfile(user, {
+            displayName: name,
+            photoURL: Img
+        })
+            .then(() => {
+            })
+            .catch(error => {
+                setError(error.message);
+            })
     }
     return (
         <div>
@@ -26,7 +61,7 @@ const SighUp = () => {
                             Photo URL:
                         </label>
                         <input
-                            type="url"
+                            type="text"
                             name="image"
                             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         />
