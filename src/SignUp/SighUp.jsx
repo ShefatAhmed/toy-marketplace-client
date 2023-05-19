@@ -5,6 +5,7 @@ import { updateProfile } from 'firebase/auth';
 
 const SighUp = () => {
     const [error, setError] = useState('');
+    const [errorMessage, setErrorMessage] = useState(null);
     const [success, setSuccess] = useState('');
     const {createUser} = useContext(AuthContext);
     const handleRegister = event => {
@@ -27,6 +28,14 @@ const SighUp = () => {
             .catch(error => {
                 console.log(error);
                 setError(error.message);
+                switch (error.code) {
+                    case 'auth/email-already-in-use':
+                      setErrorMessage('The email address you entered is already in use.');
+                      break;
+                    default:
+                      setErrorMessage('Please provide valid data.');
+                      break;
+                }
             })    
     }
     const updateUserData = (user, name , Img) => {
@@ -37,6 +46,7 @@ const SighUp = () => {
             .then(() => {
             })
             .catch(error => {
+                console.log(error);
                 setError(error.message);
             })
     }
@@ -89,11 +99,12 @@ const SighUp = () => {
                         />
                     </div>
 
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-center mb-3">
                     <button className="flex items-center justify-center text-black btn glass w-full px-4 py-2 bg-sky-50 rounded-full">
                         Sign Up
                     </button>
                     </div>
+                    {errorMessage && <p className='text-red-500 text-center'><i className="fa-solid fa-triangle-exclamation"></i> {errorMessage}</p>}
                 </form>
                 <div className="mt-4 text-sm text-center text-gray-600">
                         Allready have an account?{' '}
