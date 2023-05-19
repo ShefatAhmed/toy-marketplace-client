@@ -40,8 +40,8 @@ const Login = () => {
                     </form>
                     <div className="mt-4 text-sm text-center text-gray-600">
                         Don't have an account?{' '}
-                        <Link to="/signup" className="text-blue-500 hover:underline">
-                            Sign up
+                        <Link to="/register" className="text-blue-500 hover:underline">
+                            register now
                         </Link>
                     </div>
                     <hr className='h-1 bg-gradient-to-r from-cyan-100 via-yeallow-200 to-red-100 rounded-full my-3 mx-16' />

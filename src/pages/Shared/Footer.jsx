@@ -45,7 +45,7 @@ const Footer = () => {
                     <div>
                         <Link className='mb-5 font-bold'>COMPANY</Link>
                         <ul className='text-sm'>
-                            <li><Link to="/blog">About us</Link></li>
+                            <li><Link>About us</Link></li>
                             <li><Link>Customer Stories</Link></li>
                             <li><Link>Diversity & inclusion</Link></li>
                         </ul>
