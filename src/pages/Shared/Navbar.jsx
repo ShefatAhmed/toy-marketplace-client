@@ -11,10 +11,10 @@ const Navbar = () => {
   }
   const navItems = <>
     <li><Link to="/">Home</Link> </li>
-    <li><Link >Blogs</Link></li>
+    <li><Link to="/blog">Blogs</Link></li>
     <li><Link to="/alltoys">All Toys</Link></li>
     {
-      user && <li><Link >My Toys</Link></li>
+      user && <li><Link to="/mytoy">My Toys</Link></li>
     }
     {
       user && <li><Link to="/addAtoy">Add A Toy</Link></li>

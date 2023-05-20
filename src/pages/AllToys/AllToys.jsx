@@ -8,14 +8,13 @@ const AllToys = () => {
         <div className="overflow-x-auto mx-8 my-16">
         <table className="table table-compact w-full">
           <thead>
-            <tr>
-              <th></th> 
-              <th>Name</th> 
-              <th>Job</th> 
-              <th>company</th> 
-              <th>location</th> 
-              <th>Last Login</th> 
-              <th>Favorite Color</th>
+            <tr> 
+              <th>Seller Name</th> 
+              <th>Cars Name</th> 
+              <th>Cars category</th> 
+              <th>Price</th> 
+              <th>available quantity</th> 
+              <th>View Details</th>
             </tr>
           </thead> 
           <tbody>

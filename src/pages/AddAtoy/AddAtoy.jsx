@@ -25,12 +25,12 @@ const AddAtoy = () => {
         fetch('http://localhost:5000/toy', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newToy)
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
+            .then(res => res.json())
+            .then(data => console.log(data))
         event.target.reset('');
     };
 
@@ -39,16 +39,16 @@ const AddAtoy = () => {
             <form onSubmit={handleSubmit} className="max-w-2xl p-5 mx-auto bg-sky-50">
                 <h1 className='text-center font-bold text-3xl my-1'>Add A Toy....</h1>
                 <div>
-                        <label className="block  text-xs font-bold font-medium text-gray-800">
-                            Toy Image URL
-                        </label>
-                        <input
-                            type="text"
-                            name='img'
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                            required
-                        />
-                    </div>
+                    <label className="block  text-xs font-bold font-medium text-gray-800">
+                        Toy Image URL
+                    </label>
+                    <input
+                        type="text"
+                        name='img'
+                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        required
+                    />
+                </div>
                 <div className="grid grid-cols-1 gap-3 mt-3 md:grid-cols-2">
                     <div>
                         <label className="block  text-xs font-bold font-medium text-gray-800">
@@ -60,7 +60,7 @@ const AddAtoy = () => {
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             required
                         />
-                    </div>                    
+                    </div>
                     <div>
                         <label className="block  text-xs font-bold font-medium text-gray-800">
                             Seller Email
@@ -77,7 +77,7 @@ const AddAtoy = () => {
                             Toy Category
                         </label>
                         <select onChange={(e) => setSelectedValue(e.target.value)}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             required
                         >
                             <option value="">Select Toy Category</option>
@@ -93,7 +93,7 @@ const AddAtoy = () => {
                             Price
                         </label>
                         <input
-                            type="text"
+                            type="number"
                             name='price'
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             required
@@ -104,7 +104,7 @@ const AddAtoy = () => {
                             Rating
                         </label>
                         <input
-                            type="text"
+                            type="number"
                             name='rating'
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             required
@@ -115,7 +115,7 @@ const AddAtoy = () => {
                             Available Quantity
                         </label>
                         <input
-                            type="text"
+                            type="number"
                             name='available_quantity'
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             required
