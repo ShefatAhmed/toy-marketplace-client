@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home/Home";
 import Error from "../pages/Error/Error";
 import Login from "../Login/Login";
 import SighUp from "../SignUp/SighUp";
+import AddAtoy from "../pages/AddAtoy/AddAtoy";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
         {
           path: 'register',
           element: <SighUp></SighUp>
+        },
+        {
+          path: 'addAtoy',
+          element: <AddAtoy></AddAtoy>
         }
       ]
     },

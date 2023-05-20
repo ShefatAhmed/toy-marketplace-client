@@ -17,7 +17,7 @@ const Navbar = () => {
       user && <li><Link >My Toys</Link></li>
     }
     {
-      user && <li><Link >Add A Toy</Link></li>
+      user && <li><Link to="/addAtoy">Add A Toy</Link></li>
     }
   </>
   return (
@@ -43,7 +43,7 @@ const Navbar = () => {
       </Link>
       <div className="navbar-end">
         {
-          user && <img className="w-10 rounded-full me-8 bg-lime-50" src="https://avatars.githubusercontent.com/u/112659624?v=4" />
+          user && <img className="w-10 rounded-full me-3 bg-lime-50" src="https://avatars.githubusercontent.com/u/112659624?v=4" />
         }
         {
           user ? ( <Link onClick={userLogout} className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Log Out</Link>) : (<Link to="/login" className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Login</Link>)
