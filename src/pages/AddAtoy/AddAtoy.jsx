@@ -13,7 +13,7 @@ const AddAtoy = () => {
         const name = form.name.value;
         const seller_name = user.displayName;
         const seller_email = form.seller_email.value;
-        const sub_category = {selectedValue};
+        const sub_category = selectedValue;
         const price = form.price.value;
         const rating = form.rating.value;
         const available_quantity = form.available_quantity.value;
@@ -31,6 +31,7 @@ const AddAtoy = () => {
         })
         .then(res => res.json())
         .then(data => console.log(data))
+        event.target.reset('');
     };
 
     return (

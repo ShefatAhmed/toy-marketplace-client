@@ -1,5 +1,4 @@
 import React from 'react';
-import './Gallery.css';
 const Gallery = () => {
     const imageUrls = [
         'https://i.ibb.co/L6WTm0h/818b-Vw-Yx21-L-SL1500.jpg',
