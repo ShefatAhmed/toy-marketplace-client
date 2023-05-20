@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const AddAtoy = () => {
+    const { user } = useContext(AuthContext);
     const [selectedValue, setSelectedValue] = useState('');
     const subCategoryOptions = ['sports-car', 'truck', 'regular-car', 'mini-fire-truck', 'mini-police-car'];
 
@@ -9,7 +11,7 @@ const AddAtoy = () => {
         const form = event.target;
         const img = form.img.value;
         const name = form.name.value;
-        const seller_name = form.seller_name.value;
+        const seller_name = user.displayName;
         const seller_email = form.seller_email.value;
         const sub_category = {selectedValue};
         const price = form.price.value;
@@ -35,8 +37,7 @@ const AddAtoy = () => {
         <div className='py-5 px-8'>
             <form onSubmit={handleSubmit} className="max-w-2xl p-5 mx-auto bg-sky-50">
                 <h1 className='text-center font-bold text-3xl my-1'>Add A Toy....</h1>
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <div>
+                <div>
                         <label className="block  text-xs font-bold font-medium text-gray-800">
                             Toy Image URL
                         </label>
@@ -47,6 +48,7 @@ const AddAtoy = () => {
                             required
                         />
                     </div>
+                <div className="grid grid-cols-1 gap-3 mt-3 md:grid-cols-2">
                     <div>
                         <label className="block  text-xs font-bold font-medium text-gray-800">
                             Toy Name
@@ -57,18 +59,7 @@ const AddAtoy = () => {
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             required
                         />
-                    </div>
-                    <div>
-                        <label className="block  text-xs font-bold font-medium text-gray-800">
-                            Seller Name
-                        </label>
-                        <input
-                            type="text"
-                            name='seller_name'
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                            required
-                        />
-                    </div>
+                    </div>                    
                     <div>
                         <label className="block  text-xs font-bold font-medium text-gray-800">
                             Seller Email

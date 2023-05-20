@@ -43,7 +43,7 @@ const Navbar = () => {
       </Link>
       <div className="navbar-end">
         {
-          user && <img className="w-10 rounded-full me-3 bg-lime-50" src="https://avatars.githubusercontent.com/u/112659624?v=4" />
+          user && <img alt={user.displayName} className="w-10 rounded-full me-3 bg-lime-50" src={user.photoURL} />
         }
         {
           user ? ( <Link onClick={userLogout} className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Log Out</Link>) : (<Link to="/login" className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Login</Link>)
