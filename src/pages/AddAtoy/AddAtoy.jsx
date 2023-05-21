@@ -12,13 +12,13 @@ const AddAtoy = () => {
         const img = form.img.value;
         const name = form.name.value;
         const seller_name = user.displayName;
-        const seller_email = form.seller_email.value;
+        const seller_email = user.email;
         const sub_category = selectedValue;
         const price = form.price.value;
         const rating = form.rating.value;
         const available_quantity = form.available_quantity.value;
-        const description = form.available_quantity.value;
-        const newToy = {img, name, seller_name, seller_email, sub_category, price, rating, available_quantity, description};
+        const description = form.description.value;
+        const newToy = { img, name, seller_name, seller_email, sub_category, price, rating, available_quantity, description };
         console.log(newToy);
 
         // 
@@ -38,18 +38,18 @@ const AddAtoy = () => {
         <div className='py-5 px-8'>
             <form onSubmit={handleSubmit} className="max-w-2xl p-5 mx-auto bg-sky-50">
                 <h1 className='text-center font-bold text-3xl my-1'>Add A Toy....</h1>
-                <div>
-                    <label className="block  text-xs font-bold font-medium text-gray-800">
-                        Toy Image URL
-                    </label>
-                    <input
-                        type="text"
-                        name='img'
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                        required
-                    />
-                </div>
                 <div className="grid grid-cols-1 gap-3 mt-3 md:grid-cols-2">
+                    <div>
+                        <label className="block  text-xs font-bold font-medium text-gray-800">
+                            Toy Image URL
+                        </label>
+                        <input
+                            type="text"
+                            name='img'
+                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            required
+                        />
+                    </div>
                     <div>
                         <label className="block  text-xs font-bold font-medium text-gray-800">
                             Toy Name
@@ -57,17 +57,6 @@ const AddAtoy = () => {
                         <input
                             type="text"
                             name='name'
-                            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label className="block  text-xs font-bold font-medium text-gray-800">
-                            Seller Email
-                        </label>
-                        <input
-                            type="email"
-                            name='seller_email'
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             required
                         />
@@ -127,6 +116,7 @@ const AddAtoy = () => {
                         </label>
                         <textarea
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            name='description'
                             rows="4"
                             required
                         ></textarea>
