@@ -22,7 +22,7 @@ const AddAtoy = () => {
         console.log(newToy);
 
         // 
-        fetch('http://localhost:5000/toy', {
+        fetch('https://toy-marketplace-server-shefatahmed.vercel.app/toy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -6,7 +6,7 @@ const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [toys, addToys] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoy/${user?.email}`)
+        fetch(`https://toy-marketplace-server-shefatahmed.vercel.app/mytoy/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 addToys(data);
@@ -15,7 +15,7 @@ const MyToy = () => {
 
     const handleDelete = id => {
         console.log(id);
-        fetch(`http://localhost:5000/mytoy/${id}`, {
+        fetch(`https://toy-marketplace-server-shefatahmed.vercel.app/mytoy/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -27,7 +27,7 @@ const MyToy = () => {
                 }
             })
     }
-
+    
     return (
         <div className='mb-96'>
             {

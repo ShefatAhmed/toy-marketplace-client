@@ -14,7 +14,7 @@ const Error = () => {
                 <h1 className='text-4xl font-extrabold text-slate-100'>Opps...</h1>
                 <h1 className='text-4xl font-extrabold text-lime-100'>Page Not Found</h1>
                 <p className='text-xl text-white font-bold'>Something went wrong. This page doesn't exist</p>
-                <Link className='btn glass mt-5'>BACK TO HOMEPAGE</Link>
+                <Link className='btn glass bg-cyan-800 hover:bg-cyan-600 mt-5'>BACK TO HOMEPAGE</Link>
                 </div>
             </div>
         </div>

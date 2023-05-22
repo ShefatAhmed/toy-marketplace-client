@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -9,6 +9,13 @@ const Navbar = () => {
       .then(result => { })
       .catch(error => console.error(error));
   }
+  const [hover, setHover] = useState(false);
+  const mouseTap = () => {
+    setHover(true);
+  };
+  const mouseLeave = () => {
+    setHover(false);
+  };
   const navItems = <>
     <li><Link to="/">Home</Link> </li>
     <li><Link to="/blog">Blogs</Link></li>
@@ -29,6 +36,9 @@ const Navbar = () => {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             {navItems}
+            {
+              user ? (<Link onClick={userLogout} className="btn glass px-8 bg-cyan-500 hover:bg-cyan-800">Log Out</Link>) : (<Link to="/login" className="btn glass px-8 bg-cyan-500 hover:bg-cyan-800">Login</Link>)
+            }
           </ul>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -43,10 +53,27 @@ const Navbar = () => {
       </Link>
       <div className="navbar-end">
         {
-          user && <img className="w-10 rounded-full me-3 bg-lime-50" src={user.photoURL} />
+          user ? (<Link onClick={userLogout} className="btn md:me-3 glass hidden lg:flex px-8 bg-cyan-500 hover:bg-cyan-800">Log Out</Link>) : (<Link to="/login" className="btn md:me-3 glass hidden lg:flex px-8 bg-cyan-500 hover:bg-cyan-800">Login</Link>)
         }
         {
-          user ? ( <Link onClick={userLogout} className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Log Out</Link>) : (<Link to="/login" className="btn md:me-3 glass px-8 bg-cyan-500 hover:bg-cyan-800">Login</Link>)
+          user && <div
+            onMouseEnter={mouseTap}
+            onMouseLeave={mouseLeave}
+          >
+            <img src={user.photoURL} alt="" className="rounded-xl me-3 w-10" />
+            {hover && (
+              <div
+                style={{
+                  position: "absolute",
+                  transform: "translateX(-30%)",
+                  marginTop: "5px",
+                  width: "200px"
+                }}
+              >
+                {user.displayName}
+              </div>
+            )}
+          </div>
         }
       </div>
     </div>

@@ -18,7 +18,7 @@ const SingleToys = () => {
                     <p className="text-xl font-bold mb-2">Price: ${price}</p>
                     <div className="flex items-center mb-4">
                         <span className="text-yellow-400 text-lg mr-1">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-                        <span className="text-gray-600">({rating} Rating)</span>
+                        <span className="text-gray-600">({rating}k Rating)</span>
                     </div>
                     <p className="mb-6">Available Quantity: {available_quantity}</p>
                     <h2 className="text-xl font-bold mb-2">Cars Description</h2>

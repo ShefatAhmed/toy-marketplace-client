@@ -7,21 +7,23 @@ const UpdateToy = () => {
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
+        const description = form.description.value;
         const price = form.price.value;
         const available_quantity = form.available_quantity.value;
-
-        fetch(`http://localhost:5000/mytoy/${_id}`, {
+        console.log(description, price, available_quantity);
+        const updatToy = {description, price, available_quantity}
+        fetch(`https://toy-marketplace-server-shefatahmed.vercel.app/toy/${toy._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(UpdateToy)
+            body: JSON.stringify(updatToy)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
             })
+            event.target.reset(' ');
     };
     return (
         <div className='py-5 px-8'>
@@ -59,6 +61,7 @@ const UpdateToy = () => {
                         <input
                             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             defaultValue={description}
+                            name='description'
                             rows="4"
                             required
                         ></input>
