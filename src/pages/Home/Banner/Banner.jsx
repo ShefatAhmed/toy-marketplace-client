@@ -1,6 +1,5 @@
 import React from 'react';
 const Banner = () => {
-
   return (
     <div className="bg-gradient-to-r from-sky-400 to-indigo-400 text-white py-8 px-4">
       <div className="max-w-4xl mx-auto flex items-center justify-center">
