@@ -10,6 +10,7 @@ import SingleToys from "../pages/SingleToy/SingleToys";
 import PrivateRoutes from "../pages/PrivateRoutes/PrivateRoutes";
 import MyToy from "../pages/MyToy/MyToy";
 import UpdateToy from "../pages/UpdateToy/UpdateToy";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         {
           path: 'register',
           element: <SighUp></SighUp>
+        },
+        {
+          path: 'blog',
+          element: <Blog></Blog>
         },
         {
           path: 'addAtoy',
