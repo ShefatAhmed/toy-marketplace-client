@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../providers/AuthProvider';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
     const [error, setError] = useState('');
@@ -46,6 +47,7 @@ const Login = () => {
             console.log(error)
         })
     }
+    useTitle('Login')
     return (
         <div>
             <div className="flex flex-col items-center justify-center my-24">

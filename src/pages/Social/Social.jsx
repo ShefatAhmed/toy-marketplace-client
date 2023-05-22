@@ -1,8 +1,8 @@
 import React from 'react';
 
-
-const Testimonial = () => {
+const Social = () => {
     return (
+        <div>
             <div className="flex flex-col items-center justify-center p-8">
                 <h2 className="text-2xl font-bold mb-4">Download Our Mobile App</h2>
                 <img className="w-56 h-auto" src="https://i.ibb.co/3Bd1hpK/app-store-png-logo-33115.png" alt="Google Play Store" />
@@ -15,7 +15,8 @@ const Testimonial = () => {
                     <i className="fab fa-youtube"></i>
                 </div>
             </div>
+        </div>
     );
 };
 
-export default Testimonial;
+export default Social;

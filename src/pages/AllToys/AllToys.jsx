@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ToyDetail from './ToyDetail';
+import useTitle from '../../hooks/useTitle';
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -21,6 +22,7 @@ const AllToys = () => {
         setToys(data);
       });
   };
+  useTitle('All Toys')
   return (
     <div className="overflow-x-auto mx-8 mb-36">
       <div className="search-box p-8 text-center">

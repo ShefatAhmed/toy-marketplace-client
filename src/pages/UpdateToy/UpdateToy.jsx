@@ -12,7 +12,7 @@ const UpdateToy = () => {
         const price = form.price.value;
         const available_quantity = form.available_quantity.value;
         console.log(description, price, available_quantity);
-        const updatToy = {description, price, available_quantity}
+        const updatToy = { description, price, available_quantity }
         fetch(`https://toy-marketplace-server-shefatahmed.vercel.app/toy/${toy._id}`, {
             method: 'PUT',
             headers: {
@@ -23,7 +23,7 @@ const UpdateToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if(data.modifiedCount){
+                if (data.modifiedCount) {
                     Swal.fire({
                         title: 'UPDATE',
                         text: 'Updated any one or more information from toy price, quantity, and description information.',
@@ -32,7 +32,7 @@ const UpdateToy = () => {
                     })
                 }
             })
-            event.target.reset(' ');
+        event.target.reset(' ');
     };
     return (
         <div className='py-5 px-8'>
@@ -83,6 +83,10 @@ const UpdateToy = () => {
                     Submit
                 </button>
             </form>
+            <button
+                className="btn btn-primary"
+                onClick={() => setAsc(!asc)}
+            >{asc ? 'Price: High to Low' : 'Price: Low to High'}</button>
         </div>
     );
 };

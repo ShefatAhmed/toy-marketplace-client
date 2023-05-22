@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2'
+import useTitle from '../../hooks/useTitle';
 
 const AddAtoy = () => {
     const { user } = useContext(AuthContext);
@@ -44,7 +45,7 @@ const AddAtoy = () => {
             })
         event.target.reset('');
     };
-
+    useTitle('Add A Toy')
     return (
         <div className='py-5 px-8'>
             <form onSubmit={handleSubmit} className="max-w-2xl p-5 mx-auto bg-sky-50">

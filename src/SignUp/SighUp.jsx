@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../hooks/useTitle';
 
 const SighUp = () => {
     const [error, setError] = useState('');
@@ -50,6 +51,7 @@ const SighUp = () => {
                 setError(error.message);
             })
     }
+    useTitle('SignUp')
     return (
         <div>
             <div className="flex flex-col items-center justify-center my-24">

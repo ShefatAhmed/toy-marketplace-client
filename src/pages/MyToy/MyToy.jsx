@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2'
 import MyToys from './MyToys';
+import useTitle from '../../hooks/useTitle';
 
 const MyToy = () => {
     const { user } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const MyToy = () => {
                 addToys(data);
             });
     }, [user]);
-
+    useTitle('My Toys')
     const handleDelete = id => {
         console.log(id);
         fetch(`https://toy-marketplace-server-shefatahmed.vercel.app/mytoy/${id}`, {
@@ -38,7 +39,8 @@ const MyToy = () => {
     }
 
     return (
-        <div className='mb-96'>
+        <div className='mb-96 mt-16'>
+            <h1 className='text-center font-bold text-3xl'>My Toys</h1>
             <div className="overflow-x-auto mx-8 my-16">
                 <table className="table table-compact w-full">
                     <thead>
