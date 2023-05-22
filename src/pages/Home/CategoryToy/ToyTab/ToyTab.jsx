@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ToyTabChild from '../ToyTabChild/ToyTabChild';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 const ToyTab = () => {
     const [activeTab, setActiveTab] = useState("sports-car");
     const [toys, setToys] = useState([]);
@@ -12,12 +14,14 @@ const ToyTab = () => {
             });
     }, [activeTab]);
 
-
+    useEffect(() => {
+        Aos.init();
+    })
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
     };
     return (
-        <div className='my-20 '>
+        <div className='my-20 ' data-aos="zoom-out">
             <div className='text-center my-8'>
                 <h1 className='font-bold text-2xl uppercase'>Shop By Category</h1>
                 <p className='md:mx-16 mx-3 text-xs'>We have a wide collection of toy cars. Sports cars, trucks, police cars are popular among these toy cars. <br /> So the below section is for everyone's convenience  to purchase these toys. Check the details of your favorite toy from the category.</p>

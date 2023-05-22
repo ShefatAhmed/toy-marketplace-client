@@ -39,6 +39,7 @@ const AddAtoy = () => {
                         title: 'Wow...',
                         text: 'A toy has been successfully added',
                         icon: 'success',
+                        confirmButtonColor: '#48D1CC',
                         confirmButtonText: 'Okay'
                       })
                 }

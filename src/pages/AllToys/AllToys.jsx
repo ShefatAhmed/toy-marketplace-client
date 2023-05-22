@@ -25,6 +25,7 @@ const AllToys = () => {
   useTitle('All Toys')
   return (
     <div className="overflow-x-auto mx-8 mb-36">
+      <h1 className='text-center font-bold mt-8'>All Toys...</h1>
       <div className="search-box p-8 text-center">
           <input onChange={(event) => setSearch(event.target.value)} type="text" placeholder="Toys search by name" className="input input-bordered input-success w-full max-w-xs" />{" "}
           <button className='btn px-8 ms-5 xs:mt-8 bg-cyan-500 hover:bg-cyan-600 glass' onClick={handleSearch}>Search</button>

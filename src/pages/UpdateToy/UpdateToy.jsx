@@ -27,6 +27,7 @@ const UpdateToy = () => {
                     Swal.fire({
                         title: 'UPDATE',
                         text: 'Updated any one or more information from toy price, quantity, and description information.',
+                        confirmButtonColor: '#48D1CC',
                         icon: 'success',
                         confirmButtonText: 'Okay'
                     })
@@ -83,10 +84,6 @@ const UpdateToy = () => {
                     Submit
                 </button>
             </form>
-            <button
-                className="btn btn-primary"
-                onClick={() => setAsc(!asc)}
-            >{asc ? 'Price: High to Low' : 'Price: Low to High'}</button>
         </div>
     );
 };

@@ -1,9 +1,15 @@
-import React from 'react';
+import Aos from 'aos';
+import React, { useEffect } from 'react';
+import 'aos/dist/aos.css';
 
 const Social = () => {
+    useEffect(() => {
+        Aos.init({duration: 2000});
+    })
+    
     return (
         <div>
-            <div className="flex flex-col items-center justify-center p-8">
+            <div className="flex flex-col items-center justify-center p-8" data-aos="fade-right">
                 <h2 className="text-2xl font-bold mb-4">Download Our Mobile App</h2>
                 <img className="w-56 h-auto" src="https://i.ibb.co/3Bd1hpK/app-store-png-logo-33115.png" alt="Google Play Store" />
                 <hr className='px-96 my-5' />

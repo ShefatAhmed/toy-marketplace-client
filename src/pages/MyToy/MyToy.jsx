@@ -17,25 +17,38 @@ const MyToy = () => {
     useTitle('My Toys')
     const handleDelete = id => {
         console.log(id);
-        fetch(`https://toy-marketplace-server-shefatahmed.vercel.app/mytoy/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    const currentToys = toys.filter(toy => toy._id !== id);
-                    addToys(currentToys);
-                }
-                if (data.deletedCount) {
-                    Swal.fire({
-                        title: 'DELETE',
-                        text: 'This toy has been successfully deleted. It will no longer be available.',
-                        icon: 'success',
-                        confirmButtonText: 'Okay'
+        Swal.fire({
+            title: 'Do you agree that this toy information will be deleted from this website and database?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#48D1CC',
+            confirmButtonText: 'dark',
+            cancelButtonColor: '#8B0000',
+            confirmButtonText: 'Confirmed, Delete'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://toy-marketplace-server-shefatahmed.vercel.app/mytoy/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            const currentToys = toys.filter(toy => toy._id !== id);
+                            addToys(currentToys);
+                        }
+                        if (data.deletedCount) {
+                            Swal.fire({
+                                title: 'DELETE',
+                                text: 'This toy has been successfully deleted. It will no longer be available.',
+                                confirmButtonColor: '#48D1CC',
+                                icon: 'success',
+                                confirmButtonText: 'Okay'
+                            })
+                        }
                     })
-                }
-            })
+            }
+        })
     }
 
     return (
