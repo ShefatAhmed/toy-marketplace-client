@@ -50,7 +50,7 @@ const AddAtoy = () => {
     return (
         <div className='py-5 px-8'>
             <form onSubmit={handleSubmit} className="max-w-2xl p-5 mx-auto bg-sky-50">
-                <h1 className='text-center font-bold text-3xl my-1'>Add A Toy....</h1>
+                <h1 className='text-center font-bold text-3xl my-8'>Add A Toy....</h1>
                 <div className="grid grid-cols-1 gap-3 mt-3 md:grid-cols-2">
                     <div>
                         <label className="block  text-xs font-bold font-medium text-gray-800">
@@ -123,7 +123,7 @@ const AddAtoy = () => {
                             required
                         />
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-2 mt-5">
                         <label className="block  text-xs font-bold font-medium text-gray-800">
                             Detail Description
                         </label>
