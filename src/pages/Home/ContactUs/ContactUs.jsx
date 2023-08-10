@@ -41,7 +41,7 @@ const ContactUs = () => {
                                 d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                             ></path>
                         </svg>
-                        <p className="text-gray-700">Phone: (88) 01175823694</p>
+                        <p className="text-gray-700">Phone: (88) 01175823694 </p>
                     </div>
                 </div>
                 <div className="md:w-1/2">
