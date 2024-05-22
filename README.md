@@ -31,8 +31,5 @@ Welcome to ToyStars, your ultimate destination for toy cars! This simple yet eng
 #### Contributors:
 - Shefat Ahmed
 
-#### License:
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 #### Contact:
 For any inquiries or support, please contact the project owner: [shefat@example.com](mailto:shefat@example.com)
