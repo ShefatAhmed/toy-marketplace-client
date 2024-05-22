@@ -7,7 +7,7 @@ Welcome to ToyStars, your ultimate destination for toy cars! This simple yet eng
 - **Blog Section**: The blog tab features insightful questions and answers related to web deployment, providing valuable information for enthusiasts and developers alike.
 
 #### Technologies Used:
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS, Tailwind CSS, React.js
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
 - **Authentication**: Custom authentication system
